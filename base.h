@@ -12,9 +12,7 @@ public:
     Base();
     ~Base();
 
-
-
-
+    void Load(string filename);
 };
 
 #endif // BASE_H
