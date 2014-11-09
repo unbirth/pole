@@ -21,6 +21,8 @@ public:
     void ShowQuestion();                            //Вывод на экран, отладочная функция
     bool CheckLetter(char letter);                  //Угадывание буквы;         todo: доработать эту функцию
     void CheckWord(string word);                    //Угадывание целого слова;  todo: дописать
+    //TODO test
+
 };
 
 #endif // QUESTION_H

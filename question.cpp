@@ -42,13 +42,17 @@ void Question::ShowQuestion()
 
 bool Question::CheckLetter(char letter)
 {
-    bool guessedAll = true;
+    bool guessedAllLetters = true;                                  //Shows if all letters have been guessed
 
     for(int i = 0; i < this->answer.length(); i++)
     {
-        if(letters[i].first == letter) letters[i].second = true;
-        if(!letters[i].second) guessedAll = false;
+        if(letters[i].first == letter) letters[i].second = true;    //If letter is present, check it as guessed everywhere
+        if(!letters[i].second) guessedAllLetters = false;           //At least one unguessed - check as unguessed
     }
+    return guessedAllLetters;                                       //Return word state (guessed or not).
+}
 
-    return guessedAll;
+bool Question::CheckWord(string word)
+{
+    return (word == this->answer);
 }
