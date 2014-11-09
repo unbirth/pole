@@ -6,6 +6,7 @@ class Base
 {
 private:
     Question* base;
+    Question currentQuestion;
     int amount;
 
 public:
@@ -13,6 +14,7 @@ public:
     ~Base();
 
     void Load(string filename);
+    void LoadQuestion();
 };
 
 #endif // BASE_H

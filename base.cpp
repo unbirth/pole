@@ -4,7 +4,8 @@
 #include <base.h>
 #include <stdio.h>
 #include <fstream>
-#include <conio.h>
+#include <cstdlib>
+#include <time.h>
 
 using namespace std;
 
@@ -45,5 +46,12 @@ void Base::Load(string filename)
 
 void Base::LoadQuestion()
 {
-
+    srand(time(NULL));
+    int n = rand() % this->amount;
+    while(this->base[n].wasBefore)
+    {
+        n = rand() % this->amount;
+    }
+    this->currentQuestion = this->base[n];
+    currentQuestion.ShowQuestion();
 }
