@@ -3,7 +3,7 @@
 Base::Base()
 {
     string a, q;
-    cout << "Input amount of the questions: ";
+    cout << "FULLFILLING THE BASE\nInput amount of the questions: ";
     cin >> this->amount;
     this->base = new Question[this->amount];
     for(int i = 0; i < this->amount; i++)
