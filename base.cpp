@@ -4,6 +4,7 @@
 #include <base.h>
 #include <stdio.h>
 #include <fstream>
+#include <conio.h>
 
 using namespace std;
 
@@ -40,4 +41,9 @@ void Base::Load(string filename)
     {
         printf("EXCEPTION:\n\n%s", e.what());
     }
+}
+
+void Base::LoadQuestion()
+{
+
 }
