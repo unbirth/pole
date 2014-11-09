@@ -25,7 +25,7 @@ void Question::Form(string question, string answer)
     for (int i = 0; i < this->length; i++)
     {
         this->letters[i].first = this->answer[i];
-        this->letters[i].second = false;
+        this->letters[i].second = false;    //Was this letter guessed or not.
     }
 }
 
@@ -36,7 +36,7 @@ void Question::ShowQuestion()
     printf("Letters\n");
     for(int i = 0; i < this->length; i++ )
     {
-        printf("[%c] = %d\n", this->letters[i].first, this->letters[i].second);
+        printf("[%c] = %d\n", this->letters[i].first, this->letters[i].second); //Printing pairs 'letter - was it shown or not'
     }
 }
 
@@ -54,5 +54,5 @@ bool Question::CheckLetter(char letter)
 
 bool Question::CheckWord(string word)
 {
-    return (word == this->answer);
+    return (word == this->answer);                                  //All is clear
 }

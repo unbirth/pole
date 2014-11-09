@@ -9,19 +9,24 @@ using namespace std;
 Base::Base()
 {
     string a, q;
-    freopen("output.txt","w",stdout);
-    cout << "FULLFILLING THE BASE\nInput amount of the questions: ";
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w",stdout);
+
     cin >> this->amount;
     this->base = new Question[this->amount];
+
     for(int i = 0; i < this->amount; i++)
     {
         cout << "Question #" << i + 1 << ":\t";
-        cin >> q;
-        cout << "Answer #" << i + 1 << ":\t";
-        cin >> a;
+        getline(cin, q); cout << q;
+        cout << "\nAnswer #" << i + 1 << ":\t";
+        getline(cin, a); cout << a;
         cout << endl;
         this->base[i].Form(q, a);
     }
+
+    fclose(stdin);
+   // fclose(stdout);
 }
 
 Base::~Base()

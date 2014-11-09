@@ -10,8 +10,10 @@ private:
 
 public:
     Base();
-    Base(int amount);
     ~Base();
+
+
+
 
 };
 

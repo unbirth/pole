@@ -20,7 +20,7 @@ public:
     void Form(string question, string answer);      //Формируем новый вопрос, грубо говоря - конструктор с параметрами
     void ShowQuestion();                            //Вывод на экран, отладочная функция
     bool CheckLetter(char letter);                  //Угадывание буквы;         todo: доработать эту функцию
-    void CheckWord(string word);                    //Угадывание целого слова;  todo: дописать
+    bool CheckWord(string word);                    //Угадывание целого слова;  todo: дописать
     //TODO test
 
 };

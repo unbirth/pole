@@ -2,24 +2,16 @@
 #include <string>
 #include <stdio.h>
 #include <windows.h>
+#include <base.h>
 #include <question.h>
+#include <windows.h>
 using namespace std;
 
 int main()
 {
-    Question x;
-    char c;
-    x.Form("What's evil?", "television");
-    x.ShowQuestion();
-    while(true)
-    {
-       cin >> c;
-       if(x.CheckLetter(c))
-           cout << "Congratulations!\n";
-       else
-           cout << "Try again\n\n";
-       x.ShowQuestion();
-    }
+    system("chcp 1251 > nul");
+    Base base;
+
 
 
     return 0;
