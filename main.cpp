@@ -5,22 +5,22 @@ using namespace std;
 
 //commit?
 
-class Question
+class Question                                      //В этом классе хранится один вопрос
 {
 private:
-    string question;
-    string answer;
-    pair <char, bool>* letters;
-    bool wasBefore;
+    string question;                                //Вопрос
+    string answer;                                  //Ответ
+    pair <char, bool>* letters;                     //Пары: буква слова - была ли угадана
+    bool wasBefore;                                 //Было ли это слово загадано ранее
 
 public:
     Question();
-    ~Question();
+    ~Question();                                    //Массив у нас один - letters, очищаем память
 
-    void Form(string question, string answer);
-    void ShowQuestion();
-    bool CheckLetter(char letter);
-    void CheckWord(string word);
+    void Form(string question, string answer);      //Формируем новый вопрос, грубо говоря - конструктор с параметрами
+    void ShowQuestion();                            //Вывод на экран, отладочная функция
+    bool CheckLetter(char letter);                  //Угадывание буквы; todo: доработать эту функцию
+    void CheckWord(string word);                    //Угадывание целого слова; todo: дописать
 };
 
 Question::Question()
@@ -28,13 +28,7 @@ Question::Question()
     this->question = "";
     this->answer = "";
     wasBefore = false;
-
     this->letters = new pair<char, bool>[answer.length()];
-    for (int i = 0; i < answer.length(); i++)
-    {
-        letters[i].first = answer[i];
-        letters[i].second = false;
-    }
 }
 
 Question::~Question()
