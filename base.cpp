@@ -1,8 +1,15 @@
 #include "base.h"
+#include <iostream>
+#include <question.h>
+#include <base.h>
+#include <stdio.h>
+
+using namespace std;
 
 Base::Base()
 {
     string a, q;
+    freopen("output.txt","w",stdout);
     cout << "FULLFILLING THE BASE\nInput amount of the questions: ";
     cin >> this->amount;
     this->base = new Question[this->amount];

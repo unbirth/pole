@@ -1,9 +1,12 @@
 #include "question.h"
+#include <stdio.h>
+using namespace std;
 
 Question::Question()
 {
     this->question = "";
     this->answer = "";
+    this->length = 0;
     wasBefore = false;
     this->letters = new pair<char, bool>[answer.length()];
 }
@@ -17,9 +20,9 @@ void Question::Form(string question, string answer)
 {
     this->question = question;
     this->answer = answer;
-
-    this->letters = new pair<char, bool>[answer.length()];
-    for (int i = 0; i < this->answer.length(); i++)
+    this->length = answer.length();
+    this->letters = new pair<char, bool>[this->length];
+    for (int i = 0; i < this->length; i++)
     {
         this->letters[i].first = this->answer[i];
         this->letters[i].second = false;
@@ -28,8 +31,13 @@ void Question::Form(string question, string answer)
 
 void Question::ShowQuestion()
 {
-    cout << "Question:\t" << this->question << endl;
-    cout << "Answer:\t" << this->answer << endl;
+    printf("Question:\t%s\n", this->question.c_str());
+    printf("Answer:\t%s\n", this->answer.c_str());
+    printf("Letters\n");
+    for(int i = 0; i < this->length; i++ )
+    {
+        printf("[%c] = %d\n", this->letters[i].first, this->letters[i].second);
+    }
 }
 
 bool Question::CheckLetter(char letter)
