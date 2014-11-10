@@ -13,6 +13,8 @@ public:
     Base();
     ~Base();
 
+    Question returnCurrentQuestion();
+
     void Load(string filename);
     void LoadQuestion();
 };
