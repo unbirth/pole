@@ -54,3 +54,8 @@ void Base::LoadQuestion()
     }
     this->currentQuestion = this->base[n];
 }
+
+Question Base::returnCurrentQuestion()
+{
+    return currentQuestion;
+}

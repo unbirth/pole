@@ -8,6 +8,17 @@
 
 using namespace std;
 
+int countPoints(int length)
+{
+
+    int a = 100, b = 100;
+    for(int i = 1; i <= length; i++)
+    {
+        a < b ? a += b : b += a;
+    }
+    return max(a, b);
+}
+
 Game::Game()
 {
     this->playerName = "Аноним Анонимыч";
@@ -22,7 +33,7 @@ Game::Game(string name)
 
 Game::~Game()
 {
-    delete alphabet;
+    //delete alphabet;
 }
 
 void Game::resetGame()
@@ -56,4 +67,31 @@ int Game::rollDice()
     srand(time(NULL));
     int value = 720 + rand()%720;
     return value;
+}
+
+void Game::guessLetter(char letter)
+{
+    if(!this->alphabet[letter-'a'].second)
+    {
+        if(this->base.returnCurrentQuestion().CheckLetter(letter))
+        {
+            addPoints(10);
+        }
+        else
+        {
+            //TODO: Bad bonus
+        }
+    }
+}
+
+void Game::guessWord(string word)
+{
+    if (this->base.returnCurrentQuestion().CheckWord(word))
+    {
+        addPoints(countPoints(word.length()));
+    }
+    else
+    {
+        //TODO: Game over
+    }
 }

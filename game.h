@@ -23,6 +23,8 @@ public:
     void addPoints(int points);
     void resetGame();
     void resetAlphabet();
+    void guessLetter(char letter);
+    void guessWord(string word);
     int rollDice();
 };
 
