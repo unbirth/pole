@@ -12,13 +12,18 @@ class Game
 private:
     Base base;
     string playerName;
+    pair <char, bool> alphabet[26];
     int points;
-    pair <char, bool>* alphabet;
 
 public:
     Game();
+    Game(string name);
     ~Game();
-
+    void setName(string name);
+    void addPoints(int points);
+    void resetGame();
+    void resetAlphabet();
+    int rollDice();
 };
 
 #endif // GAME_H

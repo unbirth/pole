@@ -53,5 +53,4 @@ void Base::LoadQuestion()
         n = rand() % this->amount;
     }
     this->currentQuestion = this->base[n];
-    currentQuestion.ShowQuestion();
 }
